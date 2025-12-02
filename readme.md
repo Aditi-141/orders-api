@@ -82,9 +82,9 @@ npm install
 
 Create database:
 
-```sql
+```
 CREATE DATABASE ordersdb;
-
+```
 Create table:
 
 CREATE TABLE orders (
@@ -97,8 +97,9 @@ CREATE TABLE orders (
 );
 
 Enable search extension:
-
+```
 CREATE EXTENSION IF NOT EXISTS pg_trgm;
+```
 
 Running Redis
 
@@ -107,7 +108,7 @@ Windows:
 .\redis-server.exe
 
 Keep this terminal running.
-▶️ Run the API
+Run the API
 
 npm start
 
@@ -115,16 +116,16 @@ Your API runs at:
 
 http://localhost:5000
 
-📡 API Endpoints
-👉 Get orders (cursor pagination)
+- API Endpoints
+- Get orders (cursor pagination)
 
 GET /api/orders?limit=20&cursor=10
 
-👉 Get single order
+- Get single order
 
 GET /api/orders/:id
 
-👉 Batch insert orders
+- Batch insert orders
 
 POST /api/orders
 
