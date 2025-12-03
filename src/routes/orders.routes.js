@@ -1,15 +1,21 @@
 import { Router } from "express";
-import { fetchOrders, fetchOrder, search } from "../controllers/orders.controller.js";
+import { fetchOrders, fetchOrder, search, getStats , createBatchOrders} from "../controllers/orders.controller.js";
 
 const router = Router();
 
-//Search must come before :id
+// Stats route (must be before :id)
+router.get("/orders/stats", getStats);
+
+// Search route (must be before :id)
 router.get("/orders/search", search);
 
-//Get all orders
+// Get paginated orders
 router.get("/orders", fetchOrders);
 
-// Get one order
+// Dynamic route (always last)
 router.get("/orders/:id", fetchOrder);
+
+router.post("/orders", createBatchOrders);  // <-- ADD THIS
+
 
 export default router;
