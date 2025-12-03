@@ -86,7 +86,7 @@ Create database:
 CREATE DATABASE ordersdb;
 ```
 Create table:
-
+```
 CREATE TABLE orders (
   id SERIAL PRIMARY KEY,
   product_name TEXT NOT NULL,
@@ -95,6 +95,7 @@ CREATE TABLE orders (
   customer_id INT,
   created_at TIMESTAMP DEFAULT NOW()
 );
+```
 
 Enable search extension:
 ```
